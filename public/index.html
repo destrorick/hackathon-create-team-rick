@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PulseBoard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">PulseBoard<span class="cursor">_</span></div>
+    <div class="tagline">an AI-flavored kudos wall — Team Rick</div>
+  </header>
+
+  <main class="container">
+    <section class="panel vibe-panel">
+      <h2>Team Vibe</h2>
+      <p id="vibe-text" class="vibe-text muted">Click below to generate a read on team sentiment from recent kudos.</p>
+      <button id="vibe-btn" class="btn">Generate Vibe Summary</button>
+      <span id="vibe-source" class="vibe-source"></span>
+    </section>
+
+    <section class="panel">
+      <h2>Drop a Kudos</h2>
+      <form id="kudos-form" class="kudos-form">
+        <input type="text" name="from" placeholder="From" required>
+        <input type="text" name="to" placeholder="To" required>
+        <input type="text" name="message" placeholder="Say something nice..." required>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>The Wall</h2>
+      <div id="wall" class="wall"></div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

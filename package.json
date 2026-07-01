@@ -1,7 +1,8 @@
 {
-  "name": "create-tool-starter",
-  "version": "1.0.0",
+  "name": "pulseboard",
+  "version": "0.1.0",
   "private": true,
+  "description": "PulseBoard - an AI-flavored team kudos wall (Team Rick hackathon submission)",
   "scripts": {
     "start": "node server.js"
   },

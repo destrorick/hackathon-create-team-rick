@@ -1,21 +1,22 @@
-# Your Create-side project
+# PulseBoard
 
-This is an optional starting point — use any language/stack you like, this is just here so you don't start from a blank folder.
+An AI-flavored team kudos wall — Team Rick's hackathon submission.
 
-## Getting started
+Drop quick shout-outs to teammates, watch the wall update live, and generate an AI-powered "team vibe" summary from recent kudos.
+
+## Running it
 
 ```
 npm install
 npm start
 ```
 
-Runs a tiny Express server on port 3000 with a single placeholder route. Replace it with your actual project.
+Open http://localhost:3000.
 
-## When you're ready
+## AI feature
 
-Go to the hub app → **Targets → Submit a new target** and link either:
-- this folder's path in the repo, or
-- your own separate GitHub repo, or
-- a live URL if you've deployed it elsewhere.
+Set `OPENAI_API_KEY` in your environment to make **Generate Vibe Summary** call OpenAI for a real summary. Without it, the button still works — it falls back to a local heuristic summary so the demo runs with zero configuration.
 
-Attack teams will review whatever you link there, so make sure it's reachable and note any setup steps they'll need in the submission form.
+## For attack teams
+
+This was built fast with AI pair-programming and hasn't had a security review. Fair game — go find something.
