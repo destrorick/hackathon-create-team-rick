@@ -1,8 +1,8 @@
 {
-  "name": "pulseboard",
+  "name": "risklens",
   "version": "0.1.0",
   "private": true,
-  "description": "PulseBoard - an AI-flavored team kudos wall (Team Rick hackathon submission)",
+  "description": "RiskLens - a minimal risk assessment intake tool (Team Rick hackathon submission)",
   "scripts": {
     "start": "node server.js"
   },

@@ -3,38 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PulseBoard</title>
+  <title>RiskLens</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <header class="topbar">
-    <div class="brand">PulseBoard<span class="cursor">_</span></div>
-    <div class="tagline">an AI-flavored kudos wall — Team Rick</div>
+    <div class="brand">RiskLens<span class="cursor">_</span></div>
+    <div class="tagline">minimal risk assessment intake — Team Rick</div>
   </header>
 
   <main class="container">
-    <section class="panel vibe-panel">
-      <h2>Team Vibe</h2>
-      <p id="vibe-text" class="vibe-text muted">Click below to generate a read on team sentiment from recent kudos.</p>
-      <button id="vibe-btn" class="btn">Generate Vibe Summary</button>
-      <span id="vibe-source" class="vibe-source"></span>
-    </section>
-
     <section class="panel">
-      <h2>Drop a Kudos</h2>
-      <form id="kudos-form" class="kudos-form">
-        <input type="text" name="from" placeholder="From" required>
-        <input type="text" name="to" placeholder="To" required>
-        <input type="text" name="message" placeholder="Say something nice..." required>
-        <button type="submit" class="btn">Send</button>
+      <h2>New Assessment</h2>
+      <form id="risk-form" class="risk-form">
+        <label>Asset / system name
+          <input type="text" name="assetName" placeholder="Customer Billing API" required>
+        </label>
+        <label>Asset owner / team
+          <input type="text" name="assetOwner" placeholder="Finance Eng" required>
+        </label>
+        <label>Asset URL <span class="muted">(optional — used for the reachability check)</span>
+          <input type="url" name="assetUrl" placeholder="https://example.com">
+        </label>
+        <label>Data sensitivity
+          <select name="dataSensitivity" required>
+            <option value="Public">Public</option>
+            <option value="Internal">Internal</option>
+            <option value="Confidential">Confidential</option>
+            <option value="Restricted">Restricted</option>
+          </select>
+        </label>
+        <label>Internet-facing?
+          <select name="internetFacing">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+        </label>
+        <label>Threat likelihood (1-5)
+          <select name="likelihood" required>
+            <option value="1">1 - rare</option>
+            <option value="2">2 - unlikely</option>
+            <option value="3" selected>3 - possible</option>
+            <option value="4">4 - likely</option>
+            <option value="5">5 - almost certain</option>
+          </select>
+        </label>
+        <label>Impact severity (1-5)
+          <select name="impact" required>
+            <option value="1">1 - negligible</option>
+            <option value="2">2 - minor</option>
+            <option value="3" selected>3 - moderate</option>
+            <option value="4">4 - major</option>
+            <option value="5">5 - severe</option>
+          </select>
+        </label>
+        <label>Compliance requirement
+          <select name="compliance">
+            <option value="None">None</option>
+            <option value="GDPR">GDPR</option>
+            <option value="HIPAA">HIPAA</option>
+            <option value="PCI-DSS">PCI-DSS</option>
+            <option value="SOC2">SOC 2</option>
+          </select>
+        </label>
+        <label class="full">Existing controls
+          <textarea name="controls" placeholder="MFA, WAF, encryption at rest..."></textarea>
+        </label>
+        <label class="full">Notes / additional context
+          <textarea name="notes" placeholder="Anything else worth flagging..."></textarea>
+        </label>
+        <button type="submit" class="btn full">Submit assessment</button>
       </form>
     </section>
 
     <section>
-      <h2>The Wall</h2>
-      <div id="wall" class="wall"></div>
+      <h2>Assessment Register</h2>
+      <div id="register" class="register"></div>
     </section>
   </main>
 
